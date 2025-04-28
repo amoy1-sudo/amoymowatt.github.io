@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student API Test</title>
+</head>
+<body>
+    <h1>Student API Fetch Test</h1>
+    <pre id="output">Loading...</pre>
+
+    <script>
+        fetch('https://18.117.151.211/api/v1/students/all')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+            })
+            .catch(error => {
+                document.getElementById('output').textContent = "Error fetching data: " + error;
+            });
+    </script>
+</body>
+</html>
+
